@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+	<title>Site officiel de la commune de Bouros les bains</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link href="./../style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<form action="./../fichiersphp/enrdem.php" method="post">
+	<div id="haut">
+		<h1>Bienvenue sur le site de Bouros (67)</h1>
+		<ul>
+			<li><a href="./../actu.htm">Actualités</a></li>
+			<li><a href="./../enbref.htm">Bouros en bref </a></li>
+			<li><a href="./../conseil.pdf">Le dernier conseil</a></li>
+			<li><a href="./demande.htm">Recevez le bulletin </a></li>
+			<li><a href="./questionnaire.htm">Participez à une enquête</a></li>
+			<li><a href="./../index.htm">Accueil</a></li>
+		</ul>
+	</div>
+	<div id="centre">
+		<p>Saisissez vos coordonnées électroniques et vous recevrez le prochain bulletin municipal en format.pdf.</p>
+		<!-- Code HTML de description des composants ergonomiques -->
+		<p>
+			<label for="zoneNom">Nom : </label>
+			<input type="text" id="zoneNom" name="nom" size="30" />
+		</p>
+		</br>
+		<p>
+			<label for="zonePrenom">Prenom : </label>
+			<input type="text" id="zonePrenom" name="prenom" size="30" />
+		</p>
+		</br>			
+		<p>
+			<label for="zoneMail">E-mail : </label>
+			<input type="email" id="zoneMail" name="mail" size="60"/>
+		</p> 
+	</div>
+</form>
+</body>
+</html>
