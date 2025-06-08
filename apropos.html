@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom styles if needed */
+        .hero-bg {
+            background-color: #e9e5d9;
+        }
+        .text-custom {
+            color: #e9e5d9;
+        }
+        .bg-custom {
+            background-color: #e9e5d9;
+        }
+        .border-custom {
+            border-color: #e9e5d9;
+        }
+        
+        /* Smooth scroll animation */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom underline animation */
+        .underline-animation {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #e9e5d9;
+            transition: width 0.3s ease;
+        }
+        
+        .underline-animation:hover::after {
+            width: 100%;
+        }
+    </style>
+
+<style>
+  body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  body.fade-in {
+    opacity: 1;
+  }
+</style>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('fade-in');
+  });
+</script>
+
+</head>
+<body class="bg-white font-sans antialiased">
+
+<nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex-shrink-0 flex items-center">
+                <h1 class="text-xl font-bold text-gray-800">MonPortfolio</h1>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-700 hover:text-custom transition underline-animation">Accueil</a>
+                <a href="apropos.html" class="text-gray-700 hover:text-custom transition underline-animation">À propos</a>
+                <a href="parcours.html" class="text-gray-700 hover:text-custom transition underline-animation">Mon parcours</a>
+                <a href="projets.html" class="text-gray-700 hover:text-custom transition underline-animation">Projets</a>
+                <a href="competences.html" class="text-gray-700 hover:text-custom transition underline-animation">Compétences</a>
+                <a href="contact.html" class="text-gray-700 hover:text-custom transition underline-animation">Contact</a>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-white">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">Accueil</a>
+            <a href="apropos.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">À propos</a>
+            <a href="parcours.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">Mon parcours</a>
+            <a href="projets.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">Projets</a>
+            <a href="competences.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">Compétences</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<section id="apropos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-4">À propos de moi</h2>
+                <div class="w-24 h-1 bg-custom mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="flex justify-center">
+                    <div class="bg-custom p-6 rounded-xl shadow-lg">
+                        <div class="w-full h-64 bg-white rounded-lg"></div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">À propos de moi</h3>
+                    <p class="text-gray-600 mb4">
+                        Bonjour, je m'appelle Loris GUÉNÉ. J'ai 21 ans et je suis actuellement étudiant en première année de BUT Science des Données à l'IUT de Niort.
+                        Avant cela, j'ai obtenu mon baccalauréat au lycée Maine de Biran avec les spécialités Mathématiques et Physique-chimie.
+                    <p>
+                    <div class="my-8"></div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Mes passion</h3>
+                    <p class="text-gray-600 mb4">
+                        Grand passionné de compétition depuis mon plus jeune âge, j’ai pratiqué plusieurs sports comme le handball, le judo et l’athlétisme. Depuis plus de sept ans, je me suis particulièrement investi dans la compétition esport, centrée sur la collaboration en équipe et la prise de décision rapide. Cette expérience m’a beaucoup appris sur moi-même : elle m’a permis de développer une discipline personnelle, un fort esprit d’équipe, ainsi qu’une capacité d’analyse et d’adaptation. J’y ai découvert un univers complexe, en constante évolution, qui exige rigueur, réactivité et apprentissage continu.
+                    </p>
+                    <div class="my-8"></div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Bilan de mon année</h3>
+                    <p class="text-gray-600 mb-4">
+                        Cette première année en BUT Science des Données représente un tournant décisif dans mon parcours.
+                        Après une première orientation dans un autre domaine, j’ai fait le choix de me réorienter vers une formation plus technique, plus concrète, et plus en phase avec mes centres d’intérêt et mes aspirations professionnelles.
+                        Avec du recul, je peux dire que ce choix était le bon.
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        L’approche pédagogique du BUT SD est basée sur les compétences, les projets, et des mises en situation concrètes.
+                        C’est exactement ce que je recherchais. Les cours sont riches, variés et bien ancrés dans la réalité des métiers liés à la donnée.
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        J’ai appris à travailler de manière rigoureuse, à gérer mon temps efficacement et à mener plusieurs projets en parallèle.
+                        Cela m’a permis de développer des compétences techniques en Python, SQL, Excel, et statistiques.
+                        Certaines matières étaient complexes, mais j’ai su progresser et atteindre de bons résultats grâce à un travail régulier.
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        Sur le plan personnel, j’ai gagné en autonomie, en confiance, et en rigueur. Le travail d’équipe, les échéances serrées et la gestion de projet ont aussi beaucoup contribué à ma progression.
+                    </p>
+                    <p class="text-gray-600 mb-4">
+                        Enfin, j’ai rencontré des camarades de promo motivés avec qui j’ai partagé une belle dynamique de groupe.
+                        Cette année a posé des bases solides pour la suite, et je suis déterminé à continuer sur cette voie en deuxième année.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+  <footer class="bg-gray-800 text-white py-8 text-center mt-20">
+    <p>&copy; 2023 MonPortfolio. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>
