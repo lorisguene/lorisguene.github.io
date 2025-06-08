@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Compétences</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+            }
+          });
+        });
+        document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+      });
+    </script>
+</head>
+<body class="bg-white font-sans antialiased">
+
+<!-- Navigation identique -->
+<nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16">
+      <div class="flex-shrink-0 flex items-center">
+        <h1 class="text-xl font-bold text-gray-800">MonPortfolio</h1>
+      </div>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="index.html" class="text-gray-700 hover:text-custom transition underline-animation">Accueil</a>
+        <a href="apropos.html" class="text-gray-700 hover:text-custom transition underline-animation">À propos</a>
+        <a href="parcours.html" class="text-gray-700 hover:text-custom transition underline-animation">Mon parcours</a>
+        <a href="projets.html" class="text-gray-700 hover:text-custom transition underline-animation">Projets</a>
+        <a href="competences.html" class="text-gray-700 hover:text-custom transition underline-animation">Compétences</a>
+        <a href="contact.html" class="text-gray-700 hover:text-custom transition underline-animation">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Titre -->
+<section class="pt-32 pb-12">
+  <div class="text-center">
+    <h2 class="text-4xl font-bold text-gray-800 mb-4">Mes Compétences</h2>
+    <div class="w-24 h-1 bg-custom mx-auto"></div>
+  </div>
+</section>
+
+<!-- Contenu -->
+<section class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 pb-20">
+
+  <!-- Compétences techniques -->
+  <div class="bg-white p-6 rounded-xl shadow-lg fade-in">
+    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Compétences techniques</h3>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+      <li>Python : analyse de données, manipulation, visualisation (pandas, matplotlib, seaborn)</li>
+      <li>SQL : requêtes, gestion de bases, jointures</li>
+      <li>R : statistiques descriptives et inférentielles</li>
+      <li>HTML, CSS, JavaScript : création d'interfaces web</li>
+      <li>VBA : automatisation de tâches dans Excel</li>
+    </ul>
+  </div>
+
+  <!-- Outils & logiciels -->
+  <div class="bg-white p-6 rounded-xl shadow-lg fade-in">
+    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Outils & environnements</h3>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+      <li>Excel, Google Sheets : reporting, analyse et dashboards</li>
+      <li>Power BI : création de rapports interactifs et tableaux de bord</li>
+      <li>Sphinx: exploration et présentation de données</li>
+      <li>MySQL / phpMyAdmin : gestion de bases relationnelles</li>
+      <li>Git / GitHub : versioning et travail collaboratif</li>
+    </ul>
+  </div>
+
+  <!-- Compétences analytiques -->
+  <div class="bg-white p-6 rounded-xl shadow-lg fade-in">
+    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Compétences analytiques</h3>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+      <li>Analyse statistique descriptive et exploratoire</li>
+      <li>Régression linéaire et logistique</li>
+      <li>Tests statistiques (Student, khi², ANOVA...)</li>
+      <li>Datavisualisation pour l’aide à la décision</li>
+    </ul>
+  </div>
+
+  <!-- Soft skills -->
+  <div class="bg-white p-6 rounded-xl shadow-lg fade-in">
+    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Qualités personnelles</h3>
+    <ul class="list-disc list-inside text-gray-700 space-y-2">
+      <li>Esprit d’équipe et communication</li>
+      <li>Autonomie et capacité d’auto-apprentissage</li>
+      <li>Rigueur, curiosité, esprit critique</li>
+      <li>Adaptabilité face aux outils et langages</li>
+    </ul>
+  </div>
+
+</section>
+
+<footer class="bg-gray-800 text-white py-8 text-center mt-20">
+  <p>&copy; 2023 MonPortfolio. Tous droits réservés.</p>
+</footer>
+</body>
+</html>

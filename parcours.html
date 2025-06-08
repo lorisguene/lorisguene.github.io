@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom styles if needed */
+        .hero-bg {
+            background-color: #e9e5d9;
+        }
+        .text-custom {
+            color: #e9e5d9;
+        }
+        .bg-custom {
+            background-color: #e9e5d9;
+        }
+        .border-custom {
+            border-color: #e9e5d9;
+        }
+        
+        /* Smooth scroll animation */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom underline animation */
+        .underline-animation {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #e9e5d9;
+            transition: width 0.3s ease;
+        }
+        
+        .underline-animation:hover::after {
+            width: 100%;
+        }
+    </style>
+
+<style>
+  body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  body.fade-in {
+    opacity: 1;
+  }
+</style>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('fade-in');
+  });
+</script>
+
+</head>
+<body class="bg-white font-sans antialiased">
+
+<nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex-shrink-0 flex items-center">
+                <h1 class="text-xl font-bold text-gray-800">MonPortfolio</h1>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-700 hover:text-custom transition underline-animation">Accueil</a>
+                <a href="apropos.html" class="text-gray-700 hover:text-custom transition underline-animation">À propos</a>
+                <a href="parcours.html" class="text-gray-700 hover:text-custom transition underline-animation">Mon parcours</a>
+                <a href="projets.html" class="text-gray-700 hover:text-custom transition underline-animation">Projets</a>
+                <a href="competences.html" class="text-gray-700 hover:text-custom transition underline-animation">Compétences</a>
+                <a href="contact.html" class="text-gray-700 hover:text-custom transition underline-animation">Contact</a>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-white">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">Accueil</a>
+            <a href="apropos.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">À propos</a>
+            <a href="parcours.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">Mon parcours</a>
+            <a href="projets.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">Projets</a>
+            <a href="competences.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">Compétences</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">Contact</a>
+        </div>
+    </div>
+</nav>
+
+
+  <section class="py-20">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-4">Mon parcours</h2>
+      <div class="w-24 h-1 bg-custom mx-auto"></div>
+    </div>
+  </section>
+
+
+<section class="pb-20">
+  <div class="max-w-4xl mx-auto px-4 space-y-12">
+
+    <!-- Bac Scientifique -->
+    <div class="bg-white p-6 rounded-xl shadow-md">
+      <span class="text-gray-500 font-semibold block mb-1">2019 – 2022</span>
+      <h3 class="text-2xl font-bold text-gray-800 mb-2">Baccalauréat Scientifique</h3>
+        <p>Spécialité Mathématiques et Physique-Chimie. Mon parcours au lycée m’a permis de consolider une base solide en sciences exactes, avec un fort intérêt pour la logique, les raisonnements mathématiques et les phénomènes physiques.</p>
+        <p class="mt-2">Cette formation m’a permis d’acquérir de la rigueur, une capacité d’analyse, ainsi qu’une méthode de travail structurée, utile dans toutes les disciplines scientifiques.</p>
+      <p class="mt-4 font-semibold">Compétences développées :</p>
+      <ul class="list-disc list-inside mt-1">
+        <li>Maîtrise des fondamentaux en mathématiques et physique</li>
+        <li>Rigueur scientifique et logique</li>
+        <li>Capacité d’analyse et de synthèse</li>
+      </ul>
+      <img src="Images/m2b.jpg" alt="Photo Bac" class="mt-4 rounded-lg shadow-md max-h-64 w-full object-cover">
+    </div>
+
+    <!-- Licence Math -->
+    <div class="bg-white p-6 rounded-xl shadow-md">
+      <span class="text-gray-500 font-semibold block mb-1">2022 – 2023</span>
+      <h3 class="text-2xl font-bold text-gray-800 mb-2">Licence 1 Mathématiques – Université de Bordeaux</h3>
+        <p>Au cours de cette première année de Licence en Mathématiques à l’Université de Bordeaux, j’ai approfondi mes connaissances fondamentales en algèbre, analyse et logique. Cette formation exigeante m’a permis de développer rigueur, autonomie et méthode dans la résolution de problèmes complexes.</p>
+        <p class="mt-2">J’ai également été initié à la programmation scientifique et à l’utilisation d’outils formels pour modéliser des situations variées. Cette expérience universitaire m’a offert une solide base théorique en mathématiques, tout en m’amenant à réfléchir à une orientation plus appliquée et ancrée dans les usages concrets des données.</p>
+      <p class="mt-4 font-semibold">Compétences développées :</p>
+      <ul class="list-disc list-inside mt-1">
+        <li>Maîtrise des outils fondamentaux en mathématiques pures</li>
+        <li>Rigueur logique et raisonnement abstrait</li>
+        <li>Initiation à la programmation mathématique et à la modélisation</li>
+      </ul>
+      <img src="Images/Bdx.jpg" alt="Photo Bac" class="mt-4 rounded-lg shadow-md max-h-64 w-full object-cover">
+    </div>
+
+    <!-- Formation 42 -->
+    <div class="bg-white p-6 rounded-xl shadow-md">
+      <span class="text-gray-500 font-semibold block mb-1">2023</span>
+      <h3 class="text-2xl font-bold text-gray-800 mb-2">Formation 42 – Campus Angoulême</h3>
+        <p>En intégrant l’école 42 à Angoulême, j’ai plongé dans une pédagogie innovante, fondée sur le projet et l’autonomie. La « piscine » m’a permis d’acquérir des bases solides en développement C et en algorithmique, tout en développant ma capacité à apprendre par moi-même et à collaborer efficacement.</p>
+        <p class="mt-2">Cette immersion intensive dans un environnement orienté code et résolution de problèmes m’a appris à repousser mes limites, à persévérer et à travailler en équipe. Même si je n’ai pas poursuivi le cursus complet, cette expérience a renforcé ma confiance dans mes capacités d’apprentissage et a confirmé mon intérêt pour l’informatique et la logique algorithmique.</p>
+      <p class="mt-4 font-semibold">Compétences développées :</p>
+      <ul class="list-disc list-inside mt-1">
+        <li>Programmation en C (langage bas niveau)</li>
+        <li>Résolution de problèmes en autonomie</li>
+        <li>Travail en équipe et peer-learning</li>
+      </ul>
+      <img src="Images/42 angouleme.jpg" alt="Photo Bac" class="mt-4 rounded-lg shadow-md max-h-64 w-full object-cover">
+    </div>
+
+    <!-- BUT Science des Données -->
+    <div class="bg-white p-6 rounded-xl shadow-md">
+      <span class="text-gray-500 font-semibold block mb-1">2024 – Aujourd'hui</span>
+      <h3 class="text-2xl font-bold text-gray-800 mb-2">BUT Science des Données</h3>
+        <p>Après plusieurs expériences académique, j’ai fait le choix de m’orienter vers la science des données. Cette formation me permet d’explorer un champ passionnant à la croisée de l’informatique, des statistiques et de l’analyse décisionnelle.</p>
+        <p class="mt-2">J’y développe des compétences techniques en programmation, en modélisation statistique, en visualisation de données et en gestion de bases de données. Je travaille aussi sur des projets concrets, en lien avec les problématiques réelles des entreprises.</p>
+      <p class="mt-4 font-semibold">Compétences développées :</p>
+      <ul class="list-disc list-inside mt-1">
+        <li>Programmation (Python, SQL, R)</li>
+        <li>Analyse et visualisation de données</li>
+        <li>Modélisation statistique et inférence</li>
+      </ul>
+      <img src="Images/niort.jpg" alt="Photo Bac" class="mt-4 rounded-lg shadow-md max-h-64 w-full object-cover">
+    </div>
+
+  </div>
+</section>
+
+
+
+  <footer class="bg-gray-800 text-white py-8 text-center mt-20">
+    <p>&copy; 2023 MonPortfolio. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>

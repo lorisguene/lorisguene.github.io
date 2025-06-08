@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom styles if needed */
+        .hero-bg {
+            background-color: #e9e5d9;
+        }
+        .text-custom {
+            color: #e9e5d9;
+        }
+        .bg-custom {
+            background-color: #e9e5d9;
+        }
+        .border-custom {
+            border-color: #e9e5d9;
+        }
+        
+        /* Smooth scroll animation */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom underline animation */
+        .underline-animation {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #e9e5d9;
+            transition: width 0.3s ease;
+        }
+        
+        .underline-animation:hover::after {
+            width: 100%;
+        }
+    </style>
+
+<style>
+  body {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  body.fade-in {
+    opacity: 1;
+  }
+</style>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('fade-in');
+  });
+</script>
+
+</head>
+<body class="bg-white font-sans antialiased">
+
+<!-- Navigation (placeholder à adapter si besoin) -->
+<nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex-shrink-0 flex items-center">
+                <h1 class="text-xl font-bold text-gray-800">MonPortfolio</h1>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-700 hover:text-custom transition underline-animation">Accueil</a>
+                <a href="apropos.html" class="text-gray-700 hover:text-custom transition underline-animation">À propos</a>
+                <a href="parcours.html" class="text-gray-700 hover:text-custom transition underline-animation">Mon parcours</a>
+                <a href="projets.html" class="text-gray-700 hover:text-custom transition underline-animation">Projets</a>
+                <a href="competences.html" class="text-gray-700 hover:text-custom transition underline-animation">Compétences</a>
+                <a href="contact.html" class="text-gray-700 hover:text-custom transition underline-animation">Contact</a>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-white">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">Accueil</a>
+            <a href="apropos.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">À propos</a>
+            <a href="parcours.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">Mon parcours</a>
+            <a href="projets.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">Projets</a>
+            <a href="competences.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">Compétences</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<section class="pt-32 pb-10 text-center">
+    <h2 class="text-4xl font-extrabold text-gray-800 mb-4">Contactez-moi</h2>
+    <p class="text-gray-600">Une question, un projet ou simplement envie d'échanger ? Envoyez-moi un message !</p>
+</section>
+
+<section class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 text-center px-4">
+    <div class="contact-card rounded-xl p-6 shadow">
+        <i class="fas fa-envelope contact-icon"></i>
+        <div class="contact-label">Email</div>
+        <p class="text-gray-800">loris.guene@gmail.com</p>
+    </div>
+    <div class="contact-card rounded-xl p-6 shadow">
+        <i class="fas fa-phone contact-icon"></i>
+        <div class="contact-label">Téléphone</div>
+        <p class="text-gray-800">+33 6 15 25 39 62</p>
+    </div>
+    <div class="contact-card rounded-xl p-6 shadow">
+        <i class="fas fa-map-marker-alt contact-icon"></i>
+        <div class="contact-label">Localisation</div>
+        <p class="text-gray-800">Niort</p>
+    </div>
+</section>
+
+<section class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center px-4 pb-16">
+    <div class="contact-card rounded-xl p-6 shadow">
+        <i class="fas fa-file-download contact-icon"></i>
+        <div class="contact-label">Mon CV</div>
+        <p><a href="#" class="text-cyan-700 underline">Télécharger</a></p>
+    </div>
+    <div class="contact-card rounded-xl p-6 shadow">
+        <i class="fab fa-github contact-icon"></i>
+        <div class="contact-label">Mon compte GitHub</div>
+        <p><a href="https://github.com/lorisguene" class="text-cyan-700 underline">Lien de GitHub</a></p>
+    </div>
+    <div class="contact-card rounded-xl p-6 shadow">
+        <i class="fab fa-linkedin contact-icon"></i>
+        <div class="contact-label">Mon compte LinkedIn</div>
+        <p><a href="https://www.linkedin.com/in/loris-gu%C3%A9n%C3%A9-588061352/" class="text-cyan-700 underline">Lien LinkedIn</a></p>
+    </div>
+</section>
+
+<footer class="bg-gray-800 text-white py-8 text-center mt-20">
+    <p>&copy; 2023 MonPortfolio. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>
