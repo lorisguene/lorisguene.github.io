@@ -3,516 +3,697 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio</title>
+    <title>Mes projets | Loris Guéné</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Custom styles if needed */
-        .hero-bg {
-            background-color: #e9e5d9;
-        }
-        .text-custom {
-            color: #e9e5d9;
-        }
-        .bg-custom {
-            background-color: #e9e5d9;
-        }
-        .border-custom {
-            border-color: #e9e5d9;
-        }
-        
-        /* Smooth scroll animation */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Custom underline animation */
-        .underline-animation {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .underline-animation::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: #e9e5d9;
-            transition: width 0.3s ease;
-        }
-        
-        .underline-animation:hover::after {
-            width: 100%;
-        }
-    </style>
-
-<style>
-  body {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-  body.fade-in {
-    opacity: 1;
-  }
-</style>
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('fade-in');
-  });
-</script>
-
+    <link rel="stylesheet" href="style.css">
+    <script src="global.js" defer></script>
 </head>
-<body class="bg-white font-sans antialiased">
+<body class="bg-[#0B0F17] font-sans antialiased text-slate-200">
 
-<nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm">
+<!-- Navigation -->
+<nav class="fixed w-full z-50 glass-nav">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex-shrink-0 flex items-center">
-                <h1 class="text-xl font-bold text-gray-800">MonPortfolio</h1>
+                <a href="index.html" class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">Loris Guéné</a>
             </div>
             <div class="hidden md:flex items-center space-x-8">
-                <a href="index.html" class="text-gray-700 hover:text-custom transition underline-animation">Accueil</a>
-                <a href="apropos.html" class="text-gray-700 hover:text-custom transition underline-animation">À propos</a>
-                <a href="parcours.html" class="text-gray-700 hover:text-custom transition underline-animation">Mon parcours</a>
-                <a href="projets.html" class="text-gray-700 hover:text-custom transition underline-animation">Projets</a>
-                <a href="competences.html" class="text-gray-700 hover:text-custom transition underline-animation">Compétences</a>
-                <a href="contact.html" class="text-gray-700 hover:text-custom transition underline-animation">Contact</a>
+                <a href="index.html" class="text-slate-300 hover:text-white transition underline-animation">Accueil</a>
+                <a href="apropos.html" class="text-slate-300 hover:text-white transition underline-animation">À propos</a>
+                <a href="parcours.html" class="text-slate-300 hover:text-white transition underline-animation">Mon parcours</a>
+                <a href="projets.html" class="text-slate-300 hover:text-white transition underline-animation">Projets</a>
+                <a href="competences.html" class="text-slate-300 hover:text-white transition underline-animation">Compétences</a>
+                <a href="contact.html" class="text-slate-300 hover:text-white transition underline-animation">Contact</a>
             </div>
             <div class="md:hidden flex items-center">
-                <button id="mobile-menu-button" class="text-gray-700 focus:outline-none">
+                <button id="mobile-menu-button" class="text-slate-300 focus:outline-none hover:text-white transition">
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M4 6h16M4 12h16M4 18h16"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
             </div>
         </div>
     </div>
-    <div id="mobile-menu" class="md:hidden hidden bg-white">
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden glass-card mx-4 my-2 rounded-xl">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">Accueil</a>
-            <a href="apropos.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">À propos</a>
-            <a href="parcours.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">Mon parcours</a>
-            <a href="projets.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">Projets</a>
-            <a href="competences.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">Compétences</a>
-            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-custom hover:bg-opacity-30">Contact</a>
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">Accueil</a>
+            <a href="apropos.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">À propos</a>
+            <a href="parcours.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">Mon parcours</a>
+            <a href="projets.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">Projets</a>
+            <a href="competences.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">Compétences</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">Contact</a>
         </div>
     </div>
 </nav>
 
-
-<section class="py-20 hero-bg">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-4">Mes projets</h2>
-      <div class="w-24 h-1 bg-gray-800 mx-auto"></div>
-    </div>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-      
-    <div onclick="openProject(1)" class="project-card bg-white rounded-xl overflow-hidden shadow-lg transform transition hover:scale-105 cursor-pointer">
-        <div class="h-48 bg-gray-300 overflow-hidden">
-            <img src="Images/projet1.png" alt="Gestion de fichiers" class="object-cover w-full h-full">
+<!-- Main Container -->
+<section class="py-24 pt-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header -->
+        <div class="text-center mb-12 fade-in-scroll">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-slate-100 mb-4">Mes projets</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 to-indigo-500 mx-auto rounded-full mb-8"></div>
+            <p class="text-slate-400 max-w-2xl mx-auto text-sm">
+                Découvrez les projets académiques et personnels réalisés au cours de ma formation en Science des Données.
+            </p>
         </div>
 
-        <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Gestion de fichiers</h3>
-            <p class="text-gray-600 mb-4">Extraction et traitement de données d’un fichier JSON pour produire un CSV structuré</p>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-2 py-1 bg-custom rounded text-sm">Python</span>
+        <!-- Filter Bar -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12 fade-in-scroll">
+            <button onclick="filterProjects('all')" data-filter="all" class="filter-btn px-5 py-2 text-xs font-semibold rounded-full border border-transparent bg-gradient-to-r from-cyan-500 to-indigo-500 text-white transition-all shadow-md">
+                Tous
+            </button>
+            <button onclick="filterProjects('python')" data-filter="python" class="filter-btn px-5 py-2 text-xs font-semibold rounded-full border border-slate-800 bg-slate-900/50 text-slate-300 hover:border-slate-700 transition-all">
+                Python
+            </button>
+            <button onclick="filterProjects('sql')" data-filter="sql" class="filter-btn px-5 py-2 text-xs font-semibold rounded-full border border-slate-800 bg-slate-900/50 text-slate-300 hover:border-slate-700 transition-all">
+                SQL
+            </button>
+            <button onclick="filterProjects('r')" data-filter="r" class="filter-btn px-5 py-2 text-xs font-semibold rounded-full border border-slate-800 bg-slate-900/50 text-slate-300 hover:border-slate-700 transition-all">
+                R
+            </button>
+            <button onclick="filterProjects('excel')" data-filter="excel" class="filter-btn px-5 py-2 text-xs font-semibold rounded-full border border-slate-800 bg-slate-900/50 text-slate-300 hover:border-slate-700 transition-all">
+                Excel
+            </button>
+            <button onclick="filterProjects('powerbi')" data-filter="powerbi" class="filter-btn px-5 py-2 text-xs font-semibold rounded-full border border-slate-800 bg-slate-900/50 text-slate-300 hover:border-slate-700 transition-all">
+                Power BI
+            </button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 fade-in-scroll">
+            
+            <!-- Projet 1 -->
+            <div onclick="openProject(1)" data-tech="python" class="project-card-container transition-all duration-300">
+                <div class="glass-card rounded-2xl overflow-hidden shadow-lg h-full flex flex-col cursor-pointer group">
+                    <div class="h-44 bg-[#1e293b]/50 overflow-hidden border-b border-slate-800/60 relative">
+                        <img src="Images/projet1.png" alt="Gestion de fichiers" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors"></div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-cyan-400 transition-colors">Gestion de fichiers</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">Extraction et traitement de données d’un fichier JSON pour produire un CSV structuré.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-cyan-950/50 border border-cyan-800/40 text-cyan-400 text-2xs font-semibold">Python</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    
-    <div onclick="openProject(2)" class="project-card bg-white rounded-xl overflow-hidden shadow-lg transform transition hover:scale-105 cursor-pointer">
-        <div class="h-48 bg-gray-300 overflow-hidden">
-            <img src="Images/projet2.png" alt="Gestion de fichiers" class="object-cover w-full h-full">
-        </div>
-        <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Conception et implémentation d’une base de données</h3>
-            <p class="text-gray-600 mb-4">Conception complète d’une base de données MySQL pour une coopérative de sel..</p>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-2 py-1 bg-custom rounded text-sm">Python</span>
-                <span class="px-2 py-1 bg-custom rounded text-sm">SQL</span>
+
+            <!-- Projet 2 -->
+            <div onclick="openProject(2)" data-tech="python sql" class="project-card-container transition-all duration-300">
+                <div class="glass-card rounded-2xl overflow-hidden shadow-lg h-full flex flex-col cursor-pointer group">
+                    <div class="h-44 bg-[#1e293b]/50 overflow-hidden border-b border-slate-800/60 relative">
+                        <img src="Images/projet2.png" alt="Conception BDD" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors"></div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-cyan-400 transition-colors">Base de Données</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">Conception complète d’une base MySQL et d'une interface Tkinter pour une coopérative de sel.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-cyan-950/50 border border-cyan-800/40 text-cyan-400 text-2xs font-semibold">Python</span>
+                            <span class="px-2.5 py-0.5 rounded-full bg-indigo-950/50 border border-indigo-800/40 text-indigo-400 text-2xs font-semibold">SQL</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    
-    <div onclick="openProject(3)" class="project-card bg-white rounded-xl overflow-hidden shadow-lg transform transition hover:scale-105 cursor-pointer">
-        <div class="h-48 bg-gray-300 overflow-hidden">
-            <img src="Images/projet3.png" alt="Gestion de fichiers" class="object-cover w-full h-full">
-        </div>
-        <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Création d’un reporting</h3>
-            <p class="text-gray-600 mb-4">Création d’un tableau Excel dynamique pour suivre ses notes et évaluer ses compétences.</p>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-2 py-1 bg-custom rounded text-sm">VBA</span>
-                <span class="px-2 py-1 bg-custom rounded text-sm">Excel</span>
+
+            <!-- Projet 3 -->
+            <div onclick="openProject(3)" data-tech="excel" class="project-card-container transition-all duration-300">
+                <div class="glass-card rounded-2xl overflow-hidden shadow-lg h-full flex flex-col cursor-pointer group">
+                    <div class="h-44 bg-[#1e293b]/50 overflow-hidden border-b border-slate-800/60 relative">
+                        <img src="Images/projet3.png" alt="Création d’un reporting" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors"></div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-cyan-400 transition-colors">Création de Reporting</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">Création d’un tableau Excel dynamique sous VBA pour suivre ses notes et compétences.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-emerald-950/50 border border-emerald-800/40 text-emerald-400 text-2xs font-semibold">Excel</span>
+                            <span class="px-2.5 py-0.5 rounded-full bg-slate-800 text-slate-400 text-2xs font-semibold">VBA</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    
-    <div onclick="openProject(4)" class="project-card bg-white rounded-xl overflow-hidden shadow-lg transform transition hover:scale-105 cursor-pointer">
-        <div class="h-48 bg-gray-300 overflow-hidden">
-            <img src="Images/projet4.png" alt="Gestion de fichiers" class="object-cover w-full h-full">
-        </div>
-        <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Régression linéaire sur des données réelles</h3>
-            <p class="text-gray-600 mb-4">Prédiction du prix immobilier à partir d’un modèle de régression linéaire</p>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-2 py-1 bg-custom rounded text-sm">R</span>
-                <span class="px-2 py-1 bg-custom rounded text-sm">Excel</span>
+
+            <!-- Projet 4 -->
+            <div onclick="openProject(4)" data-tech="r excel" class="project-card-container transition-all duration-300">
+                <div class="glass-card rounded-2xl overflow-hidden shadow-lg h-full flex flex-col cursor-pointer group">
+                    <div class="h-44 bg-[#1e293b]/50 overflow-hidden border-b border-slate-800/60 relative">
+                        <img src="Images/projet4.png" alt="Régression linéaire" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors"></div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-cyan-400 transition-colors">Régression Linéaire</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">Prédiction de prix immobiliers à partir d’un modèle statistique construit manuellement en R.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-teal-950/50 border border-teal-800/40 text-teal-400 text-2xs font-semibold">R</span>
+                            <span class="px-2.5 py-0.5 rounded-full bg-emerald-950/50 border border-emerald-800/40 text-emerald-400 text-2xs font-semibold">Excel</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    
-    <div onclick="openProject(5)" class="project-card bg-white rounded-xl overflow-hidden shadow-lg transform transition hover:scale-105 cursor-pointer">
-        <div class="h-48 bg-gray-300 overflow-hidden">
-            <img src="Images/projet5.png" alt="Gestion de fichiers" class="object-cover w-full h-full">
-        </div>
-        <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Échantillonnage et Estimation</h3>
-            <p class="text-gray-600 mb-4">Estimation de population et analyse statistique avec R sur des données de communes.</p>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-2 py-1 bg-custom rounded text-sm">R</span>
+
+            <!-- Projet 5 -->
+            <div onclick="openProject(5)" data-tech="r" class="project-card-container transition-all duration-300">
+                <div class="glass-card rounded-2xl overflow-hidden shadow-lg h-full flex flex-col cursor-pointer group">
+                    <div class="h-44 bg-[#1e293b]/50 overflow-hidden border-b border-slate-800/60 relative">
+                        <img src="Images/projet5.png" alt="Échantillonnage et Estimation" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors"></div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-cyan-400 transition-colors">Échantillonnage & Estimation</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">Estimation de population et analyse statistique descriptive avec R sur des données de communes.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-teal-950/50 border border-teal-800/40 text-teal-400 text-2xs font-semibold">R</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    
-    <div onclick="openProject(6)" class="project-card bg-white rounded-xl overflow-hidden shadow-lg transform transition hover:scale-105 cursor-pointer">
-        <div class="h-48 bg-gray-300 overflow-hidden">
-            <img src="Images/projet6_carte.png" alt="Gestion de fichiers" class="object-cover w-full h-full">
-        </div>
-        <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Challenge Dataviz</h3>
-            <p class="text-gray-600 mb-4">Conception d’une infographie sur la scolarisation des jeunes</p>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-2 py-1 bg-custom rounded text-sm">Excel</span>
-                <span class="px-2 py-1 bg-custom rounded text-sm">Power bi</span>
+
+            <!-- Projet 6 -->
+            <div onclick="openProject(6)" data-tech="excel powerbi" class="project-card-container transition-all duration-300">
+                <div class="glass-card rounded-2xl overflow-hidden shadow-lg h-full flex flex-col cursor-pointer group">
+                    <div class="h-44 bg-[#1e293b]/50 overflow-hidden border-b border-slate-800/60 relative">
+                        <img src="Images/projet6_carte.png" alt="Challenge Dataviz" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors"></div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-cyan-400 transition-colors">Challenge Dataviz</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">Conception d’une infographie sur la scolarisation des 15-29 ans avec Power BI et Canva.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-emerald-950/50 border border-emerald-800/40 text-emerald-400 text-2xs font-semibold">Excel</span>
+                            <span class="px-2.5 py-0.5 rounded-full bg-amber-950/50 border border-amber-800/40 text-amber-400 text-2xs font-semibold">Power BI</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    
-    <div onclick="openProject(7)" class="project-card bg-white rounded-xl overflow-hidden shadow-lg transform transition hover:scale-105 cursor-pointer">
-        <div class="h-48 bg-gray-300 overflow-hidden">
-            <img src="Images/projet7_carte.png" alt="Gestion de fichiers" class="object-cover w-full h-full">
-        </div>
-        <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Construction et présentation d’indicateurs de performances</h3>
-            <p class="text-gray-600 mb-4">Analyse de performance d’entreprise à travers des indicateurs économiques.</p>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-2 py-1 bg-custom rounded text-sm">Excel</span>
+
+            <!-- Projet 7 -->
+            <div onclick="openProject(7)" data-tech="excel" class="project-card-container transition-all duration-300">
+                <div class="glass-card rounded-2xl overflow-hidden shadow-lg h-full flex flex-col cursor-pointer group">
+                    <div class="h-44 bg-[#1e293b]/50 overflow-hidden border-b border-slate-800/60 relative">
+                        <img src="Images/projet7_carte.png" alt="Indicateurs de performance" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors"></div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-cyan-400 transition-colors">Indicateurs de Performance</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">Analyse de performance financière et diagnostic d'entreprise à partir d'indicateurs économiques.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-emerald-950/50 border border-emerald-800/40 text-emerald-400 text-2xs font-semibold">Excel</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    
-    <div onclick="openProject(8)" class="project-card bg-white rounded-xl overflow-hidden shadow-lg transform transition hover:scale-105 cursor-pointer">
-        <div class="h-48 bg-gray-300 overflow-hidden">
-            <img src="Images/projet8.png" alt="Gestion de fichiers" class="object-cover w-full h-full">
-        </div>
-        <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Portfolio</h3>
-            <p class="text-gray-600 mb-4">Site personnel pour présenter ses projets, compétences et parcours</p>
-            <div class="flex flex-wrap gap-2">
-                <span class="px-2 py-1 bg-custom rounded text-sm">HTML</span>
-                <span class="px-2 py-1 bg-custom rounded text-sm">CSS</span>
-                <span class="px-2 py-1 bg-custom rounded text-sm">JavaScript</span>
+
+            <!-- Projet 8 -->
+            <div onclick="openProject(8)" data-tech="portfolio" class="project-card-container transition-all duration-300">
+                <div class="glass-card rounded-2xl overflow-hidden shadow-lg h-full flex flex-col cursor-pointer group">
+                    <div class="h-44 bg-[#1e293b]/50 overflow-hidden border-b border-slate-800/60 relative">
+                        <img src="Images/projet8.png" alt="Portfolio" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/0 transition-colors"></div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-100 mb-2 group-hover:text-cyan-400 transition-colors">Site Portfolio</h3>
+                            <p class="text-slate-400 text-xs leading-relaxed mb-4">Conception de ce site personnel interactif pour présenter mes projets, compétences et parcours.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2.5 py-0.5 rounded-full bg-slate-900 border border-slate-800 text-slate-300 text-2xs font-semibold">HTML / CSS / JS</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
-    
-    </div>
-  </div>
 </section>
 
+<!-- Modals -->
 
-    <div id="projectDetail1" class="fixed inset-0 z-50 flex items-center justify-center hidden transition-opacity duration-300">
-        <div class="bg-white w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2 max-h-[90vh] overflow-y-auto p-8 rounded-xl shadow-2xl scale-90 opacity-0 transition-all duration-300 transform" id="projectBox1">
-            <button onclick="closeProject(1)" class="text-gray-800 text-2xl font-bold float-right">&times;</button>
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Gestion de fichiers</h2>
+<!-- Modal 1 -->
+<div id="projectDetail1" onclick="closeProject(1)" class="fixed inset-0 z-50 flex items-center justify-center hidden modal-backdrop p-4 transition-opacity duration-300">
+    <div id="projectBox1" onclick="event.stopPropagation()" class="bg-[#121B2F] border border-slate-850 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 max-h-[90vh] overflow-y-auto p-8 rounded-2xl shadow-2xl scale-95 opacity-0 transition-all duration-300 transform">
+        <button onclick="closeProject(1)" class="text-slate-400 hover:text-white text-2xl font-bold float-right transition">&times;</button>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-100 mb-4 flex items-center">
+            <i class="fas fa-file-alt text-cyan-400 mr-3"></i> Gestion de fichiers
+        </h2>
 
-            <p class="text-gray-700 mb-6">
-                Le projet consiste à créer un script Python qui transforme un fichier JSON contenant les événements parisiens en un fichier CSV propre. Le script extrait et formate des champs spécifiques, convertit les dates/heures, respecte l’encodage, et assure la lisibilité du fichier sous Excel.
-            </p>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Le projet consiste à créer un script Python qui transforme un fichier JSON contenant les événements parisiens en un fichier CSV propre et structuré. Le script extrait et formate des champs spécifiques, convertit les dates/heures, respecte l’encodage UTF-8 et assure la parfaite lisibilité du fichier sous Excel.
+        </p>
 
-            <div class="grid md:grid-cols-2 gap-8 mb-6">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Technologies utilisées</h3>
-                    <ul class="list-disc list-inside text-gray-700"><li>Python : pour le traitement des fichiers JSON et la conversion en CSV</li><li>Pandas : pour la manipulation et le nettoyage de données structurées</li></ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Fonctionnalités clés</h3>
-                    <ul class="list-disc list-inside text-gray-700"><li>Extraction de champs spécifiques depuis un fichier JSON</li><li>Conversion des formats date/heure</li><li>Production de fichiers CSV propres et lisibles</li><li>Respect des encodages et compatibilité Excel</li></ul>
-                </div>
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="p-5 rounded-xl bg-[#0B0F17]/60 border border-slate-800">
+                <h3 class="text-base font-bold text-slate-200 mb-3 flex items-center">
+                    <i class="fas fa-tools text-cyan-400 mr-2 text-sm"></i> Technologies
+                </h3>
+                <ul class="text-xs text-slate-400 space-y-2">
+                    <li class="flex items-center"><i class="fas fa-check text-cyan-500 mr-2 text-3xs"></i> Python : traitement des fichiers et logique de script</li>
+                    <li class="flex items-center"><i class="fas fa-check text-cyan-500 mr-2 text-3xs"></i> Pandas : manipulation de structures tabulaires</li>
+                </ul>
             </div>
+            <div class="p-5 rounded-xl bg-[#0B0F17]/60 border border-slate-800">
+                <h3 class="text-base font-bold text-slate-200 mb-3 flex items-center">
+                    <i class="fas fa-star text-indigo-400 mr-2 text-sm"></i> Fonctionnalités clés
+                </h3>
+                <ul class="text-xs text-slate-400 space-y-2">
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Extraction sélective de données JSON</li>
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Conversion de formats temporels</li>
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Nettoyage d'encodage et conformité Excel</li>
+                </ul>
+            </div>
+        </div>
 
-            <p class="text-gray-700 mb-4"><strong>Durée du projet :</strong> 4 semaines</p>
+        <p class="text-slate-400 text-xs mb-6"><strong>Durée du projet :</strong> 4 semaines</p>
 
-            <a href="Sujets/saé1Sujet-GestionDeFichiers.pdf" target="_blank"
-                class="inline-block px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
+        <div class="flex flex-wrap gap-4 border-t border-slate-800 pt-6">
+            <a href="Sujets/saé1Sujet-GestionDeFichiers.pdf" target="_blank" class="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:shadow-cyan-500/10 hover:shadow-lg text-white rounded-lg text-xs font-semibold transition">
                 Voir le sujet du projet
             </a>
-            <a href="Travaux/transformerJsonToCsv.py" target="_blank"
-                class="inline-block px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
-                Voir le travail réalisé
+            <a href="Travaux/transformerJsonToCsv.py" target="_blank" class="px-5 py-2.5 border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white rounded-lg text-xs font-semibold transition">
+                Voir le code Python
             </a>
         </div>
     </div>
-    
-    <div id="projectDetail2" class="fixed inset-0 z-50 flex items-center justify-center hidden transition-opacity duration-300">
-        <div class="bg-white w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2 max-h-[90vh] overflow-y-auto p-8 rounded-xl shadow-2xl scale-90 opacity-0 transition-all duration-300 transform" id="projectBox2">
-            <button onclick="closeProject(2)" class="text-gray-800 text-2xl font-bold float-right">&times;</button>
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Conception et implémentation d’une base de données</h2>
+</div>
 
-            <p class="text-gray-700 mb-6">
-                Il s’agit d’un projet de modélisation (MCD, MLD), création de base sous MySQL, insertion de données, création de requêtes d’aide à la décision et réalisation d’une interface Tkinter. La base gère les apports des sauniers, les traitements, les ventes, et les prix annuels. L’application finale permet de visualiser, interroger et alimenter cette base.
-            </p>
+<!-- Modal 2 -->
+<div id="projectDetail2" onclick="closeProject(2)" class="fixed inset-0 z-50 flex items-center justify-center hidden modal-backdrop p-4 transition-opacity duration-300">
+    <div id="projectBox2" onclick="event.stopPropagation()" class="bg-[#121B2F] border border-slate-850 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 max-h-[90vh] overflow-y-auto p-8 rounded-2xl shadow-2xl scale-95 opacity-0 transition-all duration-300 transform">
+        <button onclick="closeProject(2)" class="text-slate-400 hover:text-white text-2xl font-bold float-right transition">&times;</button>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-100 mb-4 flex items-center">
+            <i class="fas fa-database text-cyan-400 mr-3"></i> Conception de base de données
+        </h2>
 
-            <div class="grid md:grid-cols-2 gap-8 mb-6">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Technologies utilisées</h3>
-                    <ul class="list-disc list-inside text-gray-700"><li>MySQL : base de données relationnelle pour stocker les informations</li><li>Python : pour l’interface graphique et l’interaction avec la base</li><li>Tkinter : pour créer l’interface utilisateur</li><li>Looping : pour la modélisation du MCD/MLD</li></ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Fonctionnalités clés</h3>
-                    <ul class="list-disc list-inside text-gray-700"><li>Création de la base avec MCD/MLD/MOT</li><li>Interface pour afficher et interroger les données</li><li>Requêtes SQL complexes d’aide à la décision</li><li>Ajout et modification d’enregistrements via GUI</li></ul>
-                </div>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Il s’agit d’un projet complet de modélisation (MCD, MLD), création de base sous MySQL, insertion de données, requêtes d’aide à la décision complexes et réalisation d’une interface Tkinter en Python. La base gère les apports des sauniers, les traitements, les ventes, et les prix annuels. L’application finale permet de visualiser, interroger et alimenter cette base.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="p-5 rounded-xl bg-[#0B0F17]/60 border border-slate-800">
+                <h3 class="text-base font-bold text-slate-200 mb-3 flex items-center">
+                    <i class="fas fa-tools text-cyan-400 mr-2 text-sm"></i> Technologies
+                </h3>
+                <ul class="text-xs text-slate-400 space-y-2">
+                    <li class="flex items-center"><i class="fas fa-check text-cyan-500 mr-2 text-3xs"></i> MySQL : stockage relationnel des données</li>
+                    <li class="flex items-center"><i class="fas fa-check text-cyan-500 mr-2 text-3xs"></i> Python & Tkinter : interface graphique utilisateur</li>
+                    <li class="flex items-center"><i class="fas fa-check text-cyan-500 mr-2 text-3xs"></i> Looping : modélisation MCD/MLD</li>
+                </ul>
             </div>
+            <div class="p-5 rounded-xl bg-[#0B0F17]/60 border border-slate-800">
+                <h3 class="text-base font-bold text-slate-200 mb-3 flex items-center">
+                    <i class="fas fa-star text-indigo-400 mr-2 text-sm"></i> Fonctionnalités clés
+                </h3>
+                <ul class="text-xs text-slate-400 space-y-2">
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Interface CRUD d'alimentation et d'affichage</li>
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Requêtes SQL complexes d’aide à la décision</li>
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Gestion des prix de campagne et ventes de sel</li>
+                </ul>
+            </div>
+        </div>
 
-            <p class="text-gray-700 mb-4"><strong>Durée du projet :</strong> 4 semaines</p>
+        <p class="text-slate-400 text-xs mb-6"><strong>Durée du projet :</strong> 4 semaines</p>
 
-            <a href="Sujets/sujet bdr.pdf" target="_blank"
-                class="inline-block px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
+        <div class="flex flex-wrap gap-4 border-t border-slate-800 pt-6">
+            <a href="Sujets/sujet bdr.pdf" target="_blank" class="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:shadow-cyan-500/10 hover:shadow-lg text-white rounded-lg text-xs font-semibold transition">
                 Voir le sujet du projet
             </a>
-            <a href="Travaux/selmarin_ihm.py" target="_blank"
-                class="inline-block px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
-                Voir le travail réalisé
+            <a href="Travaux/selmarin_ihm.py" target="_blank" class="px-5 py-2.5 border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white rounded-lg text-xs font-semibold transition">
+                Voir l'IHM Python
             </a>
         </div>
     </div>
-    
-    <div id="projectDetail3" class="fixed inset-0 z-50 flex items-center justify-center hidden transition-opacity duration-300">
-        <div class="bg-white w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2 max-h-[90vh] overflow-y-auto p-8 rounded-xl shadow-2xl scale-90 opacity-0 transition-all duration-300 transform" id="projectBox3">
-            <button onclick="closeProject(3)" class="text-gray-800 text-2xl font-bold float-right">&times;</button>
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Création d’un reporting</h2>
+</div>
 
-            <p class="text-gray-700 mb-6">
-                Ce projet a pour objectif de développer un outil Excel personnel de gestion des notes en BUT SD. Il permet l’ajout/modification de notes, l’affichage de tableaux de bord interactifs avec graphiques, et fournit un verdict automatique (admission, compétences validées) selon des règles précises. Un guide d’utilisation accompagne l’outil.
-            </p>
+<!-- Modal 3 -->
+<div id="projectDetail3" onclick="closeProject(3)" class="fixed inset-0 z-50 flex items-center justify-center hidden modal-backdrop p-4 transition-opacity duration-300">
+    <div id="projectBox3" onclick="event.stopPropagation()" class="bg-[#121B2F] border border-slate-850 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 max-h-[90vh] overflow-y-auto p-8 rounded-2xl shadow-2xl scale-95 opacity-0 transition-all duration-300 transform">
+        <button onclick="closeProject(3)" class="text-slate-400 hover:text-white text-2xl font-bold float-right transition">&times;</button>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-100 mb-4 flex items-center">
+            <i class="fas fa-chart-pie text-cyan-400 mr-3"></i> Création de reporting
+        </h2>
 
-            <div class="grid md:grid-cols-2 gap-8 mb-6">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Technologies utilisées</h3>
-                    <ul class="list-disc list-inside text-gray-700"><li>Microsoft Excel : pour les tableaux, visualisations et mises en forme conditionnelles</li><li>VBA (Visual Basic for Applications) : utilisé ponctuellement pour automatiser certaines tâches complexes (formulaires, filtrages, navigation)</li></ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Fonctionnalités clés</h3>
-                    <ul class="list-disc list-inside text-gray-700"><li>Tableau de bord automatisé pour suivre les notes</li><li>Formules conditionnelles pour l’évaluation</li><li>Graphiques dynamiques liés aux données</li><li>Interface conviviale pour la saisie</li></ul>
-                </div>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Ce projet développe un outil Excel automatisé de suivi et de gestion des notes pour les étudiants en BUT Science des Données. Il permet l’ajout et la modification dynamique de notes, l’affichage de tableaux de bord interactifs avec graphiques, et fournit un verdict automatisé (admission, validation de compétences) basé sur le référentiel de l'IUT.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="p-5 rounded-xl bg-[#0B0F17]/60 border border-slate-800">
+                <h3 class="text-base font-bold text-slate-200 mb-3 flex items-center">
+                    <i class="fas fa-tools text-cyan-400 mr-2 text-sm"></i> Technologies
+                </h3>
+                <ul class="text-xs text-slate-400 space-y-2">
+                    <li class="flex items-center"><i class="fas fa-check text-cyan-500 mr-2 text-3xs"></i> Microsoft Excel : tableaux, KPI et formules</li>
+                    <li class="flex items-center"><i class="fas fa-check text-cyan-500 mr-2 text-3xs"></i> VBA (Visual Basic) : automatisation de saisie et navigation</li>
+                </ul>
             </div>
+            <div class="p-5 rounded-xl bg-[#0B0F17]/60 border border-slate-800">
+                <h3 class="text-base font-bold text-slate-200 mb-3 flex items-center">
+                    <i class="fas fa-star text-indigo-400 mr-2 text-sm"></i> Fonctionnalités clés
+                </h3>
+                <ul class="text-xs text-slate-400 space-y-2">
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Calcul automatique des moyennes par UE</li>
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Alertes colorées sur les notes éliminatoires</li>
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Graphiques d'évolution des compétences</li>
+                </ul>
+            </div>
+        </div>
 
-            <p class="text-gray-700 mb-4"><strong>Durée du projet :</strong> 3 semaines</p>
+        <p class="text-slate-400 text-xs mb-6"><strong>Durée du projet :</strong> 3 semaines</p>
 
-            <a href="Sujets/saé_CreationReporting.pdf" target="_blank"
-                class="inline-block px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
+        <div class="flex flex-wrap gap-4 border-t border-slate-800 pt-6">
+            <a href="Sujets/saé_CreationReporting.pdf" target="_blank" class="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:shadow-cyan-500/10 hover:shadow-lg text-white rounded-lg text-xs font-semibold transition">
                 Voir le sujet du projet
             </a>
         </div>
     </div>
-    
-    <div id="projectDetail4" class="fixed inset-0 z-50 flex items-center justify-center hidden transition-opacity duration-300">
-        <div class="bg-white w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2 max-h-[90vh] overflow-y-auto p-8 rounded-xl shadow-2xl scale-90 opacity-0 transition-all duration-300 transform" id="projectBox4">
-            <button onclick="closeProject(4)" class="text-gray-800 text-2xl font-bold float-right">&times;</button>
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Régression linéaire sur des données réelles</h2>
+</div>
 
-            <p class="text-gray-700 mb-6">
-                Ce projet repose sur un jeu de données réelles de ventes immobilières. Il faut choisir les variables pertinentes, construire un modèle de régression en R sans fonctions toutes faites (lm, predict), expliquer la démarche, fournir un code clair et rendre un fichier de prédictions à partir d’un jeu test. L’objectif est la précision du modèle, évaluée par la somme des carrés des résidus.
-            </p>
+<!-- Modal 4 -->
+<div id="projectDetail4" onclick="closeProject(4)" class="fixed inset-0 z-50 flex items-center justify-center hidden modal-backdrop p-4 transition-opacity duration-300">
+    <div id="projectBox4" onclick="event.stopPropagation()" class="bg-[#121B2F] border border-slate-850 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 max-h-[90vh] overflow-y-auto p-8 rounded-2xl shadow-2xl scale-95 opacity-0 transition-all duration-300 transform">
+        <button onclick="closeProject(4)" class="text-slate-400 hover:text-white text-2xl font-bold float-right transition">&times;</button>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-100 mb-4 flex items-center">
+            <i class="fas fa-percent text-cyan-400 mr-3"></i> Régression linéaire sur données réelles
+        </h2>
 
-            <div class="grid md:grid-cols-2 gap-8 mb-6">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Technologies utilisées</h3>
-                    <ul class="list-disc list-inside text-gray-700"><li>R : pour le développement du modèle statistique</li><li>RStudio : environnement de développement</li><li>Excel : pour la préparation initiale des données</li></ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Fonctionnalités clés</h3>
-                    <ul class="list-disc list-inside text-gray-700"><li>Construction manuelle d’un modèle de régression</li><li>Choix et nettoyage des variables explicatives</li><li>Évaluation de la précision par les résidus</li><li>Génération d’un fichier de prédictions</li></ul>
-                </div>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Ce projet modélise des prix immobiliers à partir de données réelles de ventes. L'objectif était de choisir et de nettoyer les variables explicatives pertinentes, puis de construire manuellement un modèle de régression linéaire sous R sans utiliser les fonctions pré-calculées (`lm`, `predict`). L'ajustement est évalué par la somme des carrés des résidus (SCR).
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="p-5 rounded-xl bg-[#0B0F17]/60 border border-slate-800">
+                <h3 class="text-base font-bold text-slate-200 mb-3 flex items-center">
+                    <i class="fas fa-tools text-cyan-400 mr-2 text-sm"></i> Technologies
+                </h3>
+                <ul class="text-xs text-slate-400 space-y-2">
+                    <li class="flex items-center"><i class="fas fa-check text-cyan-500 mr-2 text-3xs"></i> R & RStudio : développement de l'algorithme mathématique</li>
+                    <li class="flex items-center"><i class="fas fa-check text-cyan-500 mr-2 text-3xs"></i> Excel : nettoyage initial et audit des données</li>
+                </ul>
             </div>
+            <div class="p-5 rounded-xl bg-[#0B0F17]/60 border border-slate-800">
+                <h3 class="text-base font-bold text-slate-200 mb-3 flex items-center">
+                    <i class="fas fa-star text-indigo-400 mr-2 text-sm"></i> Fonctionnalités clés
+                </h3>
+                <ul class="text-xs text-slate-400 space-y-2">
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Implémentation matricielle des moindres carrés</li>
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Évaluation de colinéarité et résidus</li>
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Prédiction sur un jeu de données de test</li>
+                </ul>
+            </div>
+        </div>
 
-            <p class="text-gray-700 mb-4"><strong>Durée du projet :</strong> 2 semaines</p>
+        <p class="text-slate-400 text-xs mb-6"><strong>Durée du projet :</strong> 2 semaines</p>
 
-            <a href="Sujets/saé_régression.pdf" target="_blank"
-                class="inline-block px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
+        <div class="flex flex-wrap gap-4 border-t border-slate-800 pt-6">
+            <a href="Sujets/saé_régression.pdf" target="_blank" class="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:shadow-cyan-500/10 hover:shadow-lg text-white rounded-lg text-xs font-semibold transition">
                 Voir le sujet du projet
             </a>
-            <a href="Travaux/yes.R" target="_blank"
-                class="inline-block px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
-                Voir le travail réalisé
+            <a href="Travaux/yes.R" target="_blank" class="px-5 py-2.5 border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white rounded-lg text-xs font-semibold transition">
+                Voir le script R
             </a>
         </div>
     </div>
-    
-    <div id="projectDetail5" class="fixed inset-0 z-50 flex items-center justify-center hidden transition-opacity duration-300">
-        <div class="bg-white w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2 max-h-[90vh] overflow-y-auto p-8 rounded-xl shadow-2xl scale-90 opacity-0 transition-all duration-300 transform" id="projectBox5">
-            <button onclick="closeProject(5)" class="text-gray-800 text-2xl font-bold float-right">&times;</button>
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Echantillonnage et Estimation</h2>
+</div>
 
-            <p class="text-gray-700 mb-6">
-                Le projet vise à estimer le nombre d’habitants d’une région à partir d’un échantillon, d’abord aléatoire, puis stratifié. L’étudiant analyse les marges d’erreur, construit des intervalles de confiance et compare les méthodes d’échantillonnage. Une deuxième partie s’intéresse aux relations entre variables qualitatives dans une enquête sportive étudiante.
-            </p>
+<!-- Modal 5 -->
+<div id="projectDetail5" onclick="closeProject(5)" class="fixed inset-0 z-50 flex items-center justify-center hidden modal-backdrop p-4 transition-opacity duration-300">
+    <div id="projectBox5" onclick="event.stopPropagation()" class="bg-[#121B2F] border border-slate-850 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 max-h-[90vh] overflow-y-auto p-8 rounded-2xl shadow-2xl scale-95 opacity-0 transition-all duration-300 transform">
+        <button onclick="closeProject(5)" class="text-slate-400 hover:text-white text-2xl font-bold float-right transition">&times;</button>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-100 mb-4 flex items-center">
+            <i class="fas fa-dice text-cyan-400 mr-3"></i> Échantillonnage & Estimation
+        </h2>
 
-            <div class="grid md:grid-cols-2 gap-8 mb-6">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Technologies utilisées</h3>
-                    <ul class="list-disc list-inside text-gray-700"><li>R : pour les méthodes d’échantillonnage et d’estimation</li><li>RStudio : pour le traitement statistique</li></ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Fonctionnalités clés</h3>
-                    <ul class="list-disc list-inside text-gray-700"><li>Échantillonnage aléatoire et stratifié</li><li>Calcul d’intervalles de confiance</li><li>Analyse croisée de variables qualitatives</li><li>Interprétation de résultats statistiques</li></ul>
-                </div>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Le projet vise à estimer le nombre d’habitants d’une région à partir d’un échantillon restreint, en comparant la méthode d’échantillonnage aléatoire simple et la méthode stratifiée. L’étudiant analyse les marges d’erreur, construit des intervalles de confiance et compare la variance des estimateurs. Une seconde partie applique des tests de khi-deux à une enquête sur les activités physiques des étudiants.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="p-5 rounded-xl bg-[#0B0F17]/60 border border-slate-800">
+                <h3 class="text-base font-bold text-slate-200 mb-3 flex items-center">
+                    <i class="fas fa-tools text-cyan-400 mr-2 text-sm"></i> Technologies
+                </h3>
+                <ul class="text-xs text-slate-400 space-y-2">
+                    <li class="flex items-center"><i class="fas fa-check text-cyan-500 mr-2 text-3xs"></i> R & RStudio : tirage d'échantillons et calculs</li>
+                    <li class="flex items-center"><i class="fas fa-check text-cyan-500 mr-2 text-3xs"></i> Rédactique statistique : mise en forme de rapports de modélisation</li>
+                </ul>
             </div>
+            <div class="p-5 rounded-xl bg-[#0B0F17]/60 border border-slate-800">
+                <h3 class="text-base font-bold text-slate-200 mb-3 flex items-center">
+                    <i class="fas fa-star text-indigo-400 mr-2 text-sm"></i> Fonctionnalités clés
+                </h3>
+                <ul class="text-xs text-slate-400 space-y-2">
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Calculs d'intervalles de confiance de proportions/moyennes</li>
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Tests d'indépendance de variables qualitatives (Khi-deux)</li>
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Analyse comparative de précision d'échantillonnage</li>
+                </ul>
+            </div>
+        </div>
 
-            <p class="text-gray-700 mb-4"><strong>Durée du projet :</strong> 1 semaines</p>
+        <p class="text-slate-400 text-xs mb-6"><strong>Durée du projet :</strong> 1 semaine</p>
 
-            <a href="Sujets/Sujet_SAE_Stat_inf.pdf" target="_blank"
-                class="inline-block px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
+        <div class="flex flex-wrap gap-4 border-t border-slate-800 pt-6">
+            <a href="Sujets/Sujet_SAE_Stat_inf.pdf" target="_blank" class="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:shadow-cyan-500/10 hover:shadow-lg text-white rounded-lg text-xs font-semibold transition">
                 Voir le sujet du projet
             </a>
-            <a href="Travaux/rapport SAÉ Echantillonnage et estimation.pdf" target="_blank"
-                class="inline-block px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
-                Voir le travail réalisé
+            <a href="Travaux/rapport SAÉ Echantillonnage et estimation.pdf" target="_blank" class="px-5 py-2.5 border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white rounded-lg text-xs font-semibold transition">
+                Voir le rapport PDF
             </a>
         </div>
     </div>
-    
-    <div id="projectDetail6" class="fixed inset-0 z-50 flex items-center justify-center hidden transition-opacity duration-300">
-        <div class="bg-white w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2 max-h-[90vh] overflow-y-auto p-8 rounded-xl shadow-2xl scale-90 opacity-0 transition-all duration-300 transform" id="projectBox6">
-            <button onclick="closeProject(6)" class="text-gray-800 text-2xl font-bold float-right">&times;</button>
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Challenge Dataviz</h2>
+</div>
 
-            <p class="text-gray-700 mb-6">
-                Il s’agit de produire une infographie claire, sur une seule page, à partir d’un jeu de données sur les 15–29 ans. Le travail inclut le choix d’une problématique précise, le nettoyage des données, leur visualisation avec des outils comme PowerBI ou Canva, et une synthèse dans un document PDF. Un souci particulier est porté à la lisibilité et à la mise en forme.
-            </p>
+<!-- Modal 6 -->
+<div id="projectDetail6" onclick="closeProject(6)" class="fixed inset-0 z-50 flex items-center justify-center hidden modal-backdrop p-4 transition-opacity duration-300">
+    <div id="projectBox6" onclick="event.stopPropagation()" class="bg-[#121B2F] border border-slate-850 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 max-h-[90vh] overflow-y-auto p-8 rounded-2xl shadow-2xl scale-95 opacity-0 transition-all duration-300 transform">
+        <button onclick="closeProject(6)" class="text-slate-400 hover:text-white text-2xl font-bold float-right transition">&times;</button>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-100 mb-4 flex items-center">
+            <i class="fas fa-eye text-cyan-400 mr-3"></i> Challenge Dataviz
+        </h2>
 
-            <div class="grid md:grid-cols-2 gap-8 mb-6">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Technologies utilisées</h3>
-                    <ul class="list-disc list-inside text-gray-700"><li>Excel : pour le nettoyage et la visualisation des données</li><li>Power BI : pour l’interactivité et la visualisation dynamique</li><li>Canva : pour la mise en page de l’infographie</li></ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Fonctionnalités clés</h3>
-                    <ul class="list-disc list-inside text-gray-700"><li>Choix d’une problématique pertinente</li><li>Nettoyage et transformation des données</li><li>Visualisation interactive et esthétique</li><li>Infographie lisible sur une seule page</li></ul>
-                </div>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Projet express de 24h visant à concevoir une infographie percutante sur la scolarisation des jeunes de 15 à 29 ans. Le livrable consistait à analyser un jeu de données complexe, choisir une problématique sociale, nettoyer les indicateurs, puis composer un support visuel complet facilitant l'aide à la décision.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="p-5 rounded-xl bg-[#0B0F17]/60 border border-slate-800">
+                <h3 class="text-base font-bold text-slate-200 mb-3 flex items-center">
+                    <i class="fas fa-tools text-cyan-400 mr-2 text-sm"></i> Technologies
+                </h3>
+                <ul class="text-xs text-slate-400 space-y-2">
+                    <li class="flex items-center"><i class="fas fa-check text-cyan-500 mr-2 text-3xs"></i> Excel : nettoyage et agrégation de tables de données</li>
+                    <li class="flex items-center"><i class="fas fa-check text-cyan-500 mr-2 text-3xs"></i> Power BI & Canva : conception du visuel final</li>
+                </ul>
             </div>
-
-            <p class="text-gray-700 mb-4"><strong>Durée du projet :</strong> 1 journée</p>
-
-            <a href="Sujets/SAE conc dataviz.pdf" target="_blank"
-                class="inline-block px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
-                Voir le sujet du projet
-            </a>
-            <a href="Travaux/infographie EliottLorisQuentinIManePaul.png" target="_blank"
-                class="inline-block px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
-                Voir le travail réalisé
-            </a>
-        </div>
-    </div>
-    
-    <div id="projectDetail7" class="fixed inset-0 z-50 flex items-center justify-center hidden transition-opacity duration-300">
-        <div class="bg-white w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2 max-h-[90vh] overflow-y-auto p-8 rounded-xl shadow-2xl scale-90 opacity-0 transition-all duration-300 transform" id="projectBox7">
-            <button onclick="closeProject(7)" class="text-gray-800 text-2xl font-bold float-right">&times;</button>
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Construction et présentation d’indicateurs de performances</h2>
-
-            <p class="text-gray-700 mb-6">
-                Ce projet propose une étude de cas autour de Fleury-Michon à partir de données réelles (chiffres d’affaires, résultats, indicateurs). L’étudiant calcule des taux de variation, ratios, graphiques et construit un tableau de bord visuel. L’objectif est de diagnostiquer la santé financière d’une filiale, en la comparant à des ratios sectoriels.
-            </p>
-
-            <div class="grid md:grid-cols-2 gap-8 mb-6">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Technologies utilisées</h3>
-                    <ul class="list-disc list-inside text-gray-700"><li>Excel : pour le calcul des indicateurs</li><li>Canva : pour la mise en forme du tableau de bord</li></ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Fonctionnalités clés</h3>
-                    <ul class="list-disc list-inside text-gray-700"><li>Calcul de ratios économiques</li><li>Comparaison avec les moyennes sectorielles</li><li>Création de graphiques explicites</li><li>Présentation visuelle synthétique</li></ul>
-                </div>
+            <div class="p-5 rounded-xl bg-[#0B0F17]/60 border border-slate-800">
+                <h3 class="text-base font-bold text-slate-200 mb-3 flex items-center">
+                    <i class="fas fa-star text-indigo-400 mr-2 text-sm"></i> Fonctionnalités clés
+                </h3>
+                <ul class="text-xs text-slate-400 space-y-2">
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Synthèse graphique d'indicateurs multiples</li>
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Choix d'une ligne éditoriale claire</li>
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Présentation orale synthétique de la problématique</li>
+                </ul>
             </div>
+        </div>
 
-            <p class="text-gray-700 mb-4"><strong>Durée du projet :</strong> 1 journée</p>
+        <p class="text-slate-400 text-xs mb-6"><strong>Durée du projet :</strong> 1 journée</p>
 
-            <a href="Sujets/SAE_fleury michon.pdf" target="_blank"
-                class="inline-block px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
-                Voir le sujet du projet
+        <div class="flex flex-wrap gap-4 border-t border-slate-800 pt-6">
+            <a href="Sujets/SAE conc dataviz.pdf" target="_blank" class="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:shadow-cyan-500/10 hover:shadow-lg text-white rounded-lg text-xs font-semibold transition">
+                Voir le sujet
             </a>
-            <a href="Travaux/projet7.png" target="_blank"
-                class="inline-block px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition">
-                Voir le travail réalisé
+            <a href="Travaux/infographie EliottLorisQuentinIManePaul.png" target="_blank" class="px-5 py-2.5 border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white rounded-lg text-xs font-semibold transition">
+                Voir l'infographie
             </a>
         </div>
     </div>
-    
-    <div id="projectDetail8" class="fixed inset-0 z-50 flex items-center justify-center hidden transition-opacity duration-300">
-        <div class="bg-white w-11/12 md:w-3/4 lg:w-2/3 xl:w-1/2 max-h-[90vh] overflow-y-auto p-8 rounded-xl shadow-2xl scale-90 opacity-0 transition-all duration-300 transform" id="projectBox8">
-            <button onclick="closeProject(8)" class="text-gray-800 text-2xl font-bold float-right">&times;</button>
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Portfolio</h2>
+</div>
 
-            <p class="text-gray-700 mb-6">
-                Ce projet consiste à concevoir un site portfolio en HTML, CSS et JavaScript, structuré en plusieurs pages : Accueil, À propos, Parcours, Projets, Compétences et Contact. L’objectif est de présenter de manière professionnelle ses réalisations, ses outils maîtrisés et son parcours académique.
-            </p>
+<!-- Modal 7 -->
+<div id="projectDetail7" onclick="closeProject(7)" class="fixed inset-0 z-50 flex items-center justify-center hidden modal-backdrop p-4 transition-opacity duration-300">
+    <div id="projectBox7" onclick="event.stopPropagation()" class="bg-[#121B2F] border border-slate-850 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 max-h-[90vh] overflow-y-auto p-8 rounded-2xl shadow-2xl scale-95 opacity-0 transition-all duration-300 transform">
+        <button onclick="closeProject(7)" class="text-slate-400 hover:text-white text-2xl font-bold float-right transition">&times;</button>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-100 mb-4 flex items-center">
+            <i class="fas fa-balance-scale text-cyan-400 mr-3"></i> Construction d'indicateurs de performance
+        </h2>
 
-            <div class="grid md:grid-cols-2 gap-8 mb-6">
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Technologies utilisées</h3>
-                    <ul class="list-disc list-inside text-gray-700"><li>HTML : structure des pages du site</li><li>CSS : mise en forme, animation, responsive design</li><li>JavaScript : interactions dynamiques entre les pages</li></ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Fonctionnalités clés</h3>
-                    <ul class="list-disc list-inside text-gray-700"><li>Navigation fluide entre pages</li><li>Animations et transitions douces</li><li>Organisation claire du contenu</li><li>Affichage responsive sur tout support</li></ul>
-                </div>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Ce projet propose une étude financière autour de l'entreprise Fleury-Michon. À partir de données financières réelles, l’étudiant calcule des taux de variation, ratios de rentabilité et structure un tableau de bord. L’objectif est de réaliser un diagnostic financier complet, en le comparant aux moyennes du secteur d'activité.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="p-5 rounded-xl bg-[#0B0F17]/60 border border-slate-800">
+                <h3 class="text-base font-bold text-slate-200 mb-3 flex items-center">
+                    <i class="fas fa-tools text-cyan-400 mr-2 text-sm"></i> Technologies
+                </h3>
+                <ul class="text-xs text-slate-400 space-y-2">
+                    <li class="flex items-center"><i class="fas fa-check text-cyan-500 mr-2 text-3xs"></i> Excel : modélisation et calculs financiers</li>
+                    <li class="flex items-center"><i class="fas fa-check text-cyan-500 mr-2 text-3xs"></i> Canva : mise en page de l'infographie de synthèse</li>
+                </ul>
             </div>
+            <div class="p-5 rounded-xl bg-[#0B0F17]/60 border border-slate-800">
+                <h3 class="text-base font-bold text-slate-200 mb-3 flex items-center">
+                    <i class="fas fa-star text-indigo-400 mr-2 text-sm"></i> Fonctionnalités clés
+                </h3>
+                <ul class="text-xs text-slate-400 space-y-2">
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Calcul de soldes intermédiaires de gestion (SIG)</li>
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Graphiques d'évolution et comparaison sectorielle</li>
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Formulation de recommandations stratégiques</li>
+                </ul>
+            </div>
+        </div>
 
-            <p class="text-gray-700 mb-4"><strong>Durée du projet :</strong> 4 mois</p>
+        <p class="text-slate-400 text-xs mb-6"><strong>Durée du projet :</strong> 1 journée</p>
+
+        <div class="flex flex-wrap gap-4 border-t border-slate-800 pt-6">
+            <a href="Sujets/SAE_fleury michon.pdf" target="_blank" class="px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-indigo-500 hover:shadow-cyan-500/10 hover:shadow-lg text-white rounded-lg text-xs font-semibold transition">
+                Voir le sujet
+            </a>
+            <a href="Travaux/projet7.png" target="_blank" class="px-5 py-2.5 border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white rounded-lg text-xs font-semibold transition">
+                Voir le rendu final
+            </a>
         </div>
     </div>
-    
+</div>
 
+<!-- Modal 8 -->
+<div id="projectDetail8" onclick="closeProject(8)" class="fixed inset-0 z-50 flex items-center justify-center hidden modal-backdrop p-4 transition-opacity duration-300">
+    <div id="projectBox8" onclick="event.stopPropagation()" class="bg-[#121B2F] border border-slate-850 w-full md:w-3/4 lg:w-2/3 xl:w-1/2 max-h-[90vh] overflow-y-auto p-8 rounded-2xl shadow-2xl scale-95 opacity-0 transition-all duration-300 transform">
+        <button onclick="closeProject(8)" class="text-slate-400 hover:text-white text-2xl font-bold float-right transition">&times;</button>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-100 mb-4 flex items-center">
+            <i class="fas fa-code-branch text-cyan-400 mr-3"></i> Site Portfolio
+        </h2>
 
-  <footer class="bg-gray-800 text-white py-8 text-center mt-20">
-    <p>&copy; 2023 MonPortfolio. Tous droits réservés.</p>
-  </footer>
-</body>
+        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+            Conception et développement de ce site web personnel adaptatif (responsive) en HTML, CSS et JavaScript. Le projet a pour but de synthétiser mes compétences analytiques, mes outils maîtrisés, mes projets clés et mon parcours académique sous forme d'une vitrine moderne.
+        </p>
 
-<style>
-  .modal-open {
-    display: flex !important;
-  }
-  .modal-visible {
-    opacity: 1 !important;
-    transform: scale(1) !important;
-  }
-</style>
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="p-5 rounded-xl bg-[#0B0F17]/60 border border-slate-800">
+                <h3 class="text-base font-bold text-slate-200 mb-3 flex items-center">
+                    <i class="fas fa-tools text-cyan-400 mr-2 text-sm"></i> Technologies
+                </h3>
+                <ul class="text-xs text-slate-400 space-y-2">
+                    <li class="flex items-center"><i class="fas fa-check text-cyan-500 mr-2 text-3xs"></i> HTML5 & CSS3 : structure, styles et animations</li>
+                    <li class="flex items-center"><i class="fas fa-check text-cyan-500 mr-2 text-3xs"></i> JavaScript ES6 : filtres et modales interactives</li>
+                    <li class="flex items-center"><i class="fas fa-check text-cyan-500 mr-2 text-3xs"></i> Tailwind CSS CDN : mise en page responsive</li>
+                </ul>
+            </div>
+            <div class="p-5 rounded-xl bg-[#0B0F17]/60 border border-slate-800">
+                <h3 class="text-base font-bold text-slate-200 mb-3 flex items-center">
+                    <i class="fas fa-star text-indigo-400 mr-2 text-sm"></i> Fonctionnalités clés
+                </h3>
+                <ul class="text-xs text-slate-400 space-y-2">
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Thème sombre Cyber-Analytics</li>
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Barre de filtrage dynamique de projets</li>
+                    <li class="flex items-center"><i class="fas fa-chevron-right text-indigo-500 mr-2 text-3xs"></i> Timeline et formulaires de contact simulés</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="text-slate-400 text-xs mb-6"><strong>Durée du projet :</strong> 4 mois</p>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-[#080B11] border-t border-slate-900 text-slate-500 py-8 text-center mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-sm">&copy; 2026 Loris Guéné. Tous droits réservés.</p>
+    </div>
+</footer>
+
 <script>
-  function openProject(id) {
-    const container = document.getElementById('projectDetail' + id);
-    const box = document.getElementById('projectBox' + id);
-    container.classList.add('modal-open');
-    setTimeout(() => {
-      box.classList.add('modal-visible');
-    }, 10);
-  }
+    // 1. Tech filtering logic with animations
+    function filterProjects(category) {
+        // Handle filter buttons visual active state
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(btn => {
+            if (btn.getAttribute('data-filter') === category) {
+                btn.classList.add('bg-gradient-to-r', 'from-cyan-500', 'to-indigo-500', 'text-white', 'border-transparent');
+                btn.classList.remove('bg-slate-900/50', 'text-slate-300', 'border-slate-800');
+            } else {
+                btn.classList.remove('bg-gradient-to-r', 'from-cyan-500', 'to-indigo-500', 'text-white', 'border-transparent');
+                btn.classList.add('bg-slate-900/50', 'text-slate-300', 'border-slate-800');
+            }
+        });
 
-  function closeProject(id) {
-    const container = document.getElementById('projectDetail' + id);
-    const box = document.getElementById('projectBox' + id);
-    box.classList.remove('modal-visible');
-    setTimeout(() => {
-      container.classList.remove('modal-open');
-    }, 300);
-  }
+        // Handle cards filter hiding/showing with scale/opacity fade
+        const cards = document.querySelectorAll('.project-card-container');
+        cards.forEach(card => {
+            const techs = card.getAttribute('data-tech').split(' ');
+            if (category === 'all' || techs.includes(category)) {
+                // First show layout element
+                card.style.display = 'block';
+                // Trigger CSS repaint then add transitions
+                requestAnimationFrame(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1)';
+                });
+            } else {
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.95)';
+                // Hide after transition ends
+                setTimeout(() => {
+                    if (card.style.opacity === '0') {
+                        card.style.display = 'none';
+                    }
+                }, 300);
+            }
+        });
+    }
+
+    // 2. Modals logic
+    function openProject(id) {
+        const container = document.getElementById('projectDetail' + id);
+        const box = document.getElementById('projectBox' + id);
+        
+        if (container && box) {
+            container.classList.remove('hidden');
+            // Trigger transition classes after showing display flex/block
+            setTimeout(() => {
+                container.classList.add('modal-open');
+                box.classList.add('modal-visible');
+                box.classList.remove('scale-95', 'opacity-0');
+                box.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+    }
+
+    function closeProject(id) {
+        const container = document.getElementById('projectDetail' + id);
+        const box = document.getElementById('projectBox' + id);
+        
+        if (container && box) {
+            box.classList.remove('scale-100', 'opacity-100');
+            box.classList.add('scale-95', 'opacity-0');
+            container.classList.remove('modal-open');
+            
+            // Wait for transitions to finish before hiding layout display
+            setTimeout(() => {
+                container.classList.add('hidden');
+            }, 300);
+        }
+    }
 </script>
 
+</body>
 </html>

@@ -1,117 +1,244 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Compétences</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compétences | Loris Guéné</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-            }
-          });
-        });
-        document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
-      });
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="global.js" defer></script>
 </head>
-<body class="bg-white font-sans antialiased">
+<body class="bg-[#0B0F17] font-sans antialiased text-slate-200">
 
-<!-- Navigation identique -->
-<nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between h-16">
-      <div class="flex-shrink-0 flex items-center">
-        <h1 class="text-xl font-bold text-gray-800">MonPortfolio</h1>
-      </div>
-      <div class="hidden md:flex items-center space-x-8">
-        <a href="index.html" class="text-gray-700 hover:text-custom transition underline-animation">Accueil</a>
-        <a href="apropos.html" class="text-gray-700 hover:text-custom transition underline-animation">À propos</a>
-        <a href="parcours.html" class="text-gray-700 hover:text-custom transition underline-animation">Mon parcours</a>
-        <a href="projets.html" class="text-gray-700 hover:text-custom transition underline-animation">Projets</a>
-        <a href="competences.html" class="text-gray-700 hover:text-custom transition underline-animation">Compétences</a>
-        <a href="contact.html" class="text-gray-700 hover:text-custom transition underline-animation">Contact</a>
-      </div>
+<!-- Navigation -->
+<nav class="fixed w-full z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+            <div class="flex-shrink-0 flex items-center">
+                <a href="index.html" class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400">Loris Guéné</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="index.html" class="text-slate-300 hover:text-white transition underline-animation">Accueil</a>
+                <a href="apropos.html" class="text-slate-300 hover:text-white transition underline-animation">À propos</a>
+                <a href="parcours.html" class="text-slate-300 hover:text-white transition underline-animation">Mon parcours</a>
+                <a href="projets.html" class="text-slate-300 hover:text-white transition underline-animation">Projets</a>
+                <a href="competences.html" class="text-slate-300 hover:text-white transition underline-animation">Compétences</a>
+                <a href="contact.html" class="text-slate-300 hover:text-white transition underline-animation">Contact</a>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-slate-300 focus:outline-none hover:text-white transition">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
     </div>
-  </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden glass-card mx-4 my-2 rounded-xl">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">Accueil</a>
+            <a href="apropos.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">À propos</a>
+            <a href="parcours.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">Mon parcours</a>
+            <a href="projets.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">Projets</a>
+            <a href="competences.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">Compétences</a>
+            <a href="contact.html" class="block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white transition">Contact</a>
+        </div>
+    </div>
 </nav>
 
-<!-- Titre -->
-<section class="pt-32 pb-12">
-  <div class="text-center">
-    <h2 class="text-4xl font-bold text-gray-800 mb-4">Mes Compétences</h2>
-    <div class="w-24 h-1 bg-custom mx-auto"></div>
-  </div>
+<!-- Title Section -->
+<section class="pt-32 pb-8">
+    <div class="text-center fade-in-scroll">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-slate-100 mb-4">Mes Compétences</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 to-indigo-500 mx-auto rounded-full"></div>
+    </div>
 </section>
 
-<!-- Contenu -->
-<section class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 pb-20">
+<!-- Content Section -->
+<section class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 pb-24">
 
-  <!-- Compétences techniques -->
-  <div class="bg-white p-6 rounded-xl shadow-lg fade-in">
-    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Compétences techniques</h3>
-    <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>Python : analyse de données, manipulation, visualisation (pandas, matplotlib, seaborn)</li>
-      <li>SQL : requêtes, gestion de bases, jointures</li>
-      <li>R : statistiques descriptives et inférentielles</li>
-      <li>HTML, CSS, JavaScript : création d'interfaces web</li>
-      <li>VBA : automatisation de tâches dans Excel</li>
-    </ul>
-  </div>
+    <!-- Compétences techniques (Mastery progress bars) -->
+    <div class="glass-card p-8 rounded-2xl fade-in-scroll">
+        <h3 class="text-xl font-bold text-slate-100 mb-6 flex items-center">
+            <i class="fas fa-code text-cyan-400 mr-3"></i> Compétences techniques
+        </h3>
+        
+        <div class="space-y-5">
+            <!-- Python -->
+            <div>
+                <div class="flex justify-between text-xs font-semibold text-slate-300 mb-1.5">
+                    <span>Python (Pandas, Matplotlib, Seaborn)</span>
+                    <span class="text-cyan-400">85%</span>
+                </div>
+                <div class="h-2 w-full bg-slate-950/60 rounded-full overflow-hidden border border-slate-800">
+                    <div class="skill-progress-bar" data-width="85%"></div>
+                </div>
+            </div>
+            
+            <!-- SQL -->
+            <div>
+                <div class="flex justify-between text-xs font-semibold text-slate-300 mb-1.5">
+                    <span>SQL (Requêtes, Jointures, Bases MySQL)</span>
+                    <span class="text-cyan-400">80%</span>
+                </div>
+                <div class="h-2 w-full bg-slate-950/60 rounded-full overflow-hidden border border-slate-800">
+                    <div class="skill-progress-bar" data-width="80%"></div>
+                </div>
+            </div>
 
-  <!-- Outils & logiciels -->
-  <div class="bg-white p-6 rounded-xl shadow-lg fade-in">
-    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Outils & environnements</h3>
-    <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>Excel, Google Sheets : reporting, analyse et dashboards</li>
-      <li>Power BI : création de rapports interactifs et tableaux de bord</li>
-      <li>Sphinx: exploration et présentation de données</li>
-      <li>MySQL / phpMyAdmin : gestion de bases relationnelles</li>
-      <li>Git / GitHub : versioning et travail collaboratif</li>
-    </ul>
-  </div>
+            <!-- R -->
+            <div>
+                <div class="flex justify-between text-xs font-semibold text-slate-300 mb-1.5">
+                    <span>Langage R (Statistiques & Inférence)</span>
+                    <span class="text-cyan-400">75%</span>
+                </div>
+                <div class="h-2 w-full bg-slate-950/60 rounded-full overflow-hidden border border-slate-800">
+                    <div class="skill-progress-bar" data-width="75%"></div>
+                </div>
+            </div>
 
-  <!-- Compétences analytiques -->
-  <div class="bg-white p-6 rounded-xl shadow-lg fade-in">
-    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Compétences analytiques</h3>
-    <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>Analyse statistique descriptive et exploratoire</li>
-      <li>Régression linéaire et logistique</li>
-      <li>Tests statistiques (Student, khi², ANOVA...)</li>
-      <li>Datavisualisation pour l’aide à la décision</li>
-    </ul>
-  </div>
+            <!-- Web Dev -->
+            <div>
+                <div class="flex justify-between text-xs font-semibold text-slate-300 mb-1.5">
+                    <span>HTML, CSS & JavaScript</span>
+                    <span class="text-cyan-400">70%</span>
+                </div>
+                <div class="h-2 w-full bg-slate-950/60 rounded-full overflow-hidden border border-slate-800">
+                    <div class="skill-progress-bar" data-width="70%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <!-- Soft skills -->
-  <div class="bg-white p-6 rounded-xl shadow-lg fade-in">
-    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Qualités personnelles</h3>
-    <ul class="list-disc list-inside text-gray-700 space-y-2">
-      <li>Esprit d’équipe et communication</li>
-      <li>Autonomie et capacité d’auto-apprentissage</li>
-      <li>Rigueur, curiosité, esprit critique</li>
-      <li>Adaptabilité face aux outils et langages</li>
-    </ul>
-  </div>
+    <!-- Outils & logiciels (Mastery progress bars) -->
+    <div class="glass-card p-8 rounded-2xl fade-in-scroll delay-100">
+        <h3 class="text-xl font-bold text-slate-100 mb-6 flex items-center">
+            <i class="fas fa-laptop text-indigo-400 mr-3"></i> Outils & environnements
+        </h3>
+        
+        <div class="space-y-5">
+            <!-- Excel / VBA -->
+            <div>
+                <div class="flex justify-between text-xs font-semibold text-slate-300 mb-1.5">
+                    <span>Microsoft Excel & VBA (Automatisation)</span>
+                    <span class="text-indigo-400">85%</span>
+                </div>
+                <div class="h-2 w-full bg-slate-950/60 rounded-full overflow-hidden border border-slate-800">
+                    <div class="skill-progress-bar" data-width="85%"></div>
+                </div>
+            </div>
+
+            <!-- Power BI -->
+            <div>
+                <div class="flex justify-between text-xs font-semibold text-slate-300 mb-1.5">
+                    <span>Power BI (Dataviz & Tableaux de bord)</span>
+                    <span class="text-indigo-400">75%</span>
+                </div>
+                <div class="h-2 w-full bg-slate-950/60 rounded-full overflow-hidden border border-slate-800">
+                    <div class="skill-progress-bar" data-width="75%"></div>
+                </div>
+            </div>
+
+            <!-- Git / Github -->
+            <div>
+                <div class="flex justify-between text-xs font-semibold text-slate-300 mb-1.5">
+                    <span>Git / GitHub (Versioning)</span>
+                    <span class="text-indigo-400">70%</span>
+                </div>
+                <div class="h-2 w-full bg-slate-950/60 rounded-full overflow-hidden border border-slate-800">
+                    <div class="skill-progress-bar" data-width="70%"></div>
+                </div>
+            </div>
+
+            <!-- Sphinx / Sphinx-survey -->
+            <div>
+                <div class="flex justify-between text-xs font-semibold text-slate-300 mb-1.5">
+                    <span>Sphinx (Exploration d'enquêtes)</span>
+                    <span class="text-indigo-400">65%</span>
+                </div>
+                <div class="h-2 w-full bg-slate-950/60 rounded-full overflow-hidden border border-slate-800">
+                    <div class="skill-progress-bar" data-width="65%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Compétences analytiques (Data Analytics Cards) -->
+    <div class="glass-card p-8 rounded-2xl fade-in-scroll delay-200">
+        <h3 class="text-xl font-bold text-slate-100 mb-6 flex items-center">
+            <i class="fas fa-chart-bar text-indigo-400 mr-3"></i> Compétences analytiques
+        </h3>
+        
+        <div class="space-y-4">
+            <div class="flex items-start gap-3 p-3 rounded-xl bg-[#0F172A]/40 border border-slate-800/80">
+                <span class="p-2 rounded-lg bg-indigo-950/50 border border-indigo-800/30 text-indigo-400 text-sm mt-0.5"><i class="fas fa-calculator"></i></span>
+                <div>
+                    <h4 class="text-sm font-semibold text-slate-200">Statistiques descriptives</h4>
+                    <p class="text-xs text-slate-400 mt-0.5">Exploration, résumé numérique de variables et inférence.</p>
+                </div>
+            </div>
+            
+            <div class="flex items-start gap-3 p-3 rounded-xl bg-[#0F172A]/40 border border-slate-800/80">
+                <span class="p-2 rounded-lg bg-cyan-950/50 border border-cyan-800/30 text-cyan-400 text-sm mt-0.5"><i class="fas fa-project-diagram"></i></span>
+                <div>
+                    <h4 class="text-sm font-semibold text-slate-200">Modélisation statistique</h4>
+                    <p class="text-xs text-slate-400 mt-0.5">Régression linéaire, logistique et estimation d'échantillons.</p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3 rounded-xl bg-[#0F172A]/40 border border-slate-800/80">
+                <span class="p-2 rounded-lg bg-indigo-950/50 border border-indigo-800/30 text-indigo-400 text-sm mt-0.5"><i class="fas fa-microscope"></i></span>
+                <div>
+                    <h4 class="text-sm font-semibold text-slate-200">Tests d'hypothèses</h4>
+                    <p class="text-xs text-slate-400 mt-0.5">Mise en pratique de tests statistiques (Khi-deux, Student, ANOVA).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Soft skills (Qualités personnelles tags) -->
+    <div class="glass-card p-8 rounded-2xl fade-in-scroll delay-300">
+        <h3 class="text-xl font-bold text-slate-100 mb-6 flex items-center">
+            <i class="fas fa-users text-cyan-400 mr-3"></i> Qualités personnelles
+        </h3>
+        
+        <p class="text-slate-400 text-xs mb-6 leading-relaxed">
+            Mes expériences sportives et académiques m'ont aidé à forger ces qualités essentielles pour le travail d'équipe et la data science.
+        </p>
+
+        <div class="grid grid-cols-2 gap-3">
+            <div class="p-3.5 rounded-xl bg-[#0F172A]/40 border border-slate-800/80 text-center hover:border-cyan-500/35 transition-colors">
+                <i class="fas fa-users-cog text-cyan-400 text-lg mb-2 block"></i>
+                <span class="text-xs font-semibold text-slate-200">Esprit d'équipe</span>
+            </div>
+            
+            <div class="p-3.5 rounded-xl bg-[#0F172A]/40 border border-slate-800/80 text-center hover:border-indigo-500/35 transition-colors">
+                <i class="fas fa-brain text-indigo-400 text-lg mb-2 block"></i>
+                <span class="text-xs font-semibold text-slate-200">Esprit critique</span>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-[#0F172A]/40 border border-slate-800/80 text-center hover:border-indigo-500/35 transition-colors">
+                <i class="fas fa-rocket text-indigo-400 text-lg mb-2 block"></i>
+                <span class="text-xs font-semibold text-slate-200">Autonomie</span>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-[#0F172A]/40 border border-slate-800/80 text-center hover:border-cyan-500/35 transition-colors">
+                <i class="fas fa-lightbulb text-cyan-400 text-lg mb-2 block"></i>
+                <span class="text-xs font-semibold text-slate-200">Adaptabilité</span>
+            </div>
+        </div>
+    </div>
 
 </section>
 
-<footer class="bg-gray-800 text-white py-8 text-center mt-20">
-  <p>&copy; 2023 MonPortfolio. Tous droits réservés.</p>
+<!-- Footer -->
+<footer class="bg-[#080B11] border-t border-slate-900 text-slate-500 py-8 text-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-sm">&copy; 2026 Loris Guéné. Tous droits réservés.</p>
+    </div>
 </footer>
+
 </body>
 </html>
